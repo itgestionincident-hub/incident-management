@@ -42,9 +42,6 @@ import {
   ListItemText,
   useMediaQuery,
   SwipeableDrawer,
-  List,
-  ListItem,
-  ListItemButton,
   Fab,
   BottomNavigation,
   BottomNavigationAction,
@@ -73,8 +70,7 @@ import {
   ExpandMore as ExpandMoreIcon,
   LocationOn as LocationIcon,
   Business as BusinessIcon,
-  PriorityHigh as PriorityIcon,
-  Category as CategoryIcon
+  PriorityHigh as PriorityIcon
 } from '@mui/icons-material';
 import { createClient } from '@supabase/supabase-js';
 
@@ -292,8 +288,6 @@ const SERVICES = [
   "Stock",
   "Trésorerie et caisse"
 ];
-
-const PRIORITIES = ["basse", "moyenne", "urgente"];
 
 // ========================================
 // COMPOSANTS EXTERNALISÉS (SOLUTION AU PROBLÈME DE SAISIE)
@@ -1329,7 +1323,7 @@ const ReportingTab = React.memo(({
   // Appliquer le filtre quand les dates changent ou quand les données changent
   useEffect(() => {
     handleFilterByDate();
-  }, [dateFilter, requests, profile, user]);
+  }, [dateFilter, requests, profile, user, handleFilterByDate]);
 
   return (
     <Box>
